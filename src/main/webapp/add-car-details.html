@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Car Details</title>
+    <style>
+        /* Reset and Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #003973, #E5E5BE);
+            background-size: 400% 400%;
+            animation: gradientBackground 8s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Form Container Styles */
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 450px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #003973;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 12px 10px;
+        }
+
+        td:first-child {
+            text-align: right;
+            font-weight: bold;
+            color: #555;
+        }
+
+        label {
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 480px) {
+            td:first-child {
+                text-align: left;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            td {
+                display: block;
+            }
+
+            input[type="submit"] {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Add Car Details</h2>
+        <form action="/01-car-service-system/AddCarDetails">
+            <table>
+                <tr>
+                    <td><label for="carModel">Car Model</label></td>
+                    <td><input type="text" id="carModel" name="carModel" placeholder="Enter your car model" required></td>
+                </tr>
+                <tr>
+                    <td><label for="carType">Car Type</label></td>
+                    <td><input type="text" id="carType" name="carType" placeholder="Enter your car type" required></td>
+                </tr>
+                <tr>
+                    <td><label for="carRegistrationNumber">Registration Number</label></td>
+                    <td><input type="text" id="carRegistrationNumber" name="carRegistrationNumber" placeholder="Enter your car registration number" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Add Car Details">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

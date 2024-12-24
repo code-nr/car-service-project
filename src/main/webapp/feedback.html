@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Service Feedback Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .feedback-form-container {
+      max-width: 600px;
+      margin: 20px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    .feedback-form-container h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: #007bff;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .rating-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .rating-container label {
+      color: #555;
+      font-weight: normal;
+    }
+
+    .rating-container input {
+      margin-right: 5px;
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background: #45a049;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 768px) {
+      .feedback-form-container {
+        padding: 15px;
+      }
+
+      .rating-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .rating-container label {
+        margin-bottom: 5px;
+      }
+
+      .btn-submit {
+        padding: 10px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .feedback-form-container {
+        margin: 10px;
+        padding: 15px;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .btn-submit {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      .rating-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-form-container">
+    <h1>Car Service Feedback</h1>
+    <form action="/submit-feedback" method="post">
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+      </div>
+
+      <!-- Contact Number -->
+      <div class="form-group">
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+      </div>
+
+      <!-- Service Type -->
+      <div class="form-group">
+        <label for="service-type">Type of Service</label>
+        <select id="service-type" name="service_type" required>
+          <option value="" disabled selected>-- Select Service Type --</option>
+          <option value="oil_change">Oil Change</option>
+          <option value="general_maintenance">General Maintenance</option>
+          <option value="car_wash">Car Wash</option>
+          <option value="repair">Repair</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <!-- Feedback -->
+      <div class="form-group">
+        <label for="feedback">Your Feedback</label>
+        <textarea id="feedback" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea>
+      </div>
+
+      <!-- Rating -->
+      <div class="form-group">
+        <label>Overall Rating</label>
+        <div class="rating-container">
+          <label><input type="radio" name="rating" value="1" required> 1</label>
+          <label><input type="radio" name="rating" value="2"> 2</label>
+          <label><input type="radio" name="rating" value="3"> 3</label>
+          <label><input type="radio" name="rating" value="4"> 4</label>
+          <label><input type="radio" name="rating" value="5"> 5</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-submit">Submit Feedback</button>
+    </form>
+
+    <p class="note">Thank you for helping us improve our services!</p>
+  </div>
+</body>
+</html>
