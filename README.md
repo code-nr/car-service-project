@@ -45,7 +45,7 @@ The **Car Service System** is a web-based platform designed to streamline the ma
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/car-service-system.git
+   git clone https://github.com/code-nr/car-service-system.git
    ```
 
 ## Contributing
